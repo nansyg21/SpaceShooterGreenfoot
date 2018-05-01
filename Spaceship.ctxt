@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Spaceship
+comment0.text=\r\n\ A\ simple\ SpaceShip\ that\ can\ move\ up\ and\ down.\r\n\ \r\n\ @author\ Poul\ Henriksen\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ shoot()
+comment3.params=lives
+comment3.target=void\ lostLife(int)
+comment4.params=
+comment4.target=void\ gameOver()
+numComments=5

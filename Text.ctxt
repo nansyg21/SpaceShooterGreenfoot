@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Text
+comment0.text=\r\n\ This\ class\ provides\ objects\ that\ just\ show\ a\ bit\ of\ text\ on\ the\ screen.\r\n
+comment1.params=length\ myFontSize
+comment1.target=Text(int,\ int)
+comment2.params=text\ myFontSize
+comment2.target=Text(java.lang.String,\ int)
+comment3.params=text
+comment3.target=Text(java.lang.String)
+comment4.params=text
+comment4.target=void\ setText(java.lang.String)
+comment5.params=x\ y
+comment5.target=void\ setLocation(int,\ int)
+comment5.text=\r\n\ Adapt\ location\ to\ make\ placement\ left-justified.\r\n
+numComments=6
