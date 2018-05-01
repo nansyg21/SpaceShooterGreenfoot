@@ -9,25 +9,25 @@ public class ScrollWorld extends World
 { 
     private int lives = 3;
     private int myscore = 0;
-    
+
     private static final GreenfootImage bgImage = new GreenfootImage("space1.gif");
     private static final int scrollSpeed = 4;
 
     private GreenfootImage scrollingImage;
     private int scrollPosition = 0;
-    
+
     private Text calculationLabel;
     private FirstEquationNumber firstFactorLabel;
     private SecondEquationNumber secondFactorLabel;
     private OperatorEquation operatorLabel;
     private ScoreText scoreText;
-    
+
     private AnswerBox ab1, ab2, ab3;
-    
+
     private Life life1, life2, life3;
-    
+
     private int[] answerBoxPositions = new int[3];
-    
+
     private Score score;
 
     public ScrollWorld()
@@ -38,47 +38,48 @@ public class ScrollWorld extends World
         scrollingImage = getScrollingImage(800, 400);
         background.drawImage(scrollingImage, 0, 0);
         setBackground(background);
-        
+
         Equation eq = new Equation();
-        
+
         firstFactorLabel = new FirstEquationNumber("0000");
         firstFactorLabel.setText(eq.getFirstNumber()+"");
         addObject(firstFactorLabel,300,30);
-        
+
         secondFactorLabel = new SecondEquationNumber("0000");
         secondFactorLabel.setText(eq.getSecondNumber()+"");
         addObject(secondFactorLabel,500,30);
-        
+
         operatorLabel = new OperatorEquation(eq.getOperator());
         addObject(operatorLabel,400,30);
-        
+
         life1 = new Life();
         life2 = new Life();
         life3 = new Life();
-        
+
         addObject(life1,20,380);
         addObject(life2,60,380);
         addObject(life3,100,380);
-        
+
         score = new Score(scoreText);
         addObject(score,700,380);
-        
+
         scoreText = new ScoreText("0000");
         scoreText.setText("0");
         addObject(scoreText,740,380);       
-        
+
         ab1 = new AnswerBox(eq.getRandomResult1()+"", false);
         addObject(ab1,799,50);
-        
+
         ab2 = new AnswerBox(eq.getRandomResult2()+"", false);
         addObject(ab2,799,200);
-        
+
         ab3 = new AnswerBox(eq.getResult()+"", true);
         addObject(ab3,799,350);
 
         addObject(new Spaceship(), 100, 200);
+        prepare();
     }
-    
+
     public void createNewEquation(){
         Equation eq = new Equation();
         firstFactorLabel.setText(eq.getFirstNumber()+"");
@@ -86,23 +87,23 @@ public class ScrollWorld extends World
         operatorLabel.setText(eq.getOperator());
         createAnswerBoxes(eq);
     }
-    
+
     public void createAnswerBoxes(Equation eq){
         getAnswerBoxPositions();
         ab1 = new AnswerBox(eq.getRandomResult1()+"", false);
         addObject(ab1,799,answerBoxPositions[0]);
-        
+
         ab2 = new AnswerBox(eq.getRandomResult2()+"", false);
         addObject(ab2,799,answerBoxPositions[1]);
-        
+
         ab3 = new AnswerBox(eq.getResult()+"", true);
         addObject(ab3,799,answerBoxPositions[2]);
     }
-    
+
     public void getAnswerBoxPositions(){
-        
+
         int positionCase = Greenfoot.getRandomNumber(7);
-        
+
         switch(positionCase){
             case 0:
             answerBoxPositions[0] = 50;
@@ -135,7 +136,7 @@ public class ScrollWorld extends World
             answerBoxPositions[2] = 200;
             return;
         }    
-        
+
     }
 
     public void act()
@@ -145,7 +146,7 @@ public class ScrollWorld extends World
             ab2.setVelocity((score.getScore()/100)+1);
             ab3.setVelocity((score.getScore()/100)+1);
         }
-        
+
         if(getObjects(Spaceship.class).size()==0){
             ScoreBoard myScoreBoard = new ScoreBoard(score.getScore());
             Greenfoot.playSound("cheers.wav");
@@ -161,14 +162,13 @@ public class ScrollWorld extends World
             scrollPosition -= scrollSpeed;
             paint(scrollPosition);
             randomAsteroid();
-        
+
             if(getObjects(AnswerBox.class).size()==0){
                 createNewEquation();
             }
         }
     }  
-    
-    
+
     public int y;
     public int deltaX;
     public int deltaY;
@@ -201,7 +201,7 @@ public class ScrollWorld extends World
         GreenfootImage bg = getBackground();
         bg.drawImage(scrollingImage, position, 0);
         bg.drawImage(scrollingImage, position - scrollingImage.getWidth(), 0);       
-        
+
     }
 
     /**
@@ -217,6 +217,12 @@ public class ScrollWorld extends World
         }
         return image;
     } 
-    
-    
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+    }
 }

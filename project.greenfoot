@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue May 01 12:26:57 EEST 2018
+#Tue May 01 22:41:45 EEST 2018
 target16.name=Life
 dependency35.to=Equation
 target2.name=Bullet
@@ -48,7 +48,7 @@ target12.x=0
 publish.longDesc=
 target3.editor.y=34
 target3.editor.x=450
-editor.fx.0.height=745
+editor.fx.0.height=0
 project.charset=windows-1252
 dependency40.to=ScoreBoard
 target12.typeParameters=
@@ -159,6 +159,7 @@ dependency4.to=SmallAsteroid
 target7.editor.y=15
 target7.editor.x=189
 target9.typeParameters=
+class.Menu.superclass=greenfoot.World
 target16.height=50
 target7.width=80
 target2.editor.height=712
@@ -192,12 +193,12 @@ target6.typeParameters=
 publish.updateDesc=still in beta. tell me what I can do to improve the game please\!
 target4.type=ClassTarget
 dependency33.from=ScrollWorld
-editor.fx.0.y=189
+editor.fx.0.y=0
 dependency36.type=UsesDependency
-editor.fx.0.x=388
+editor.fx.0.x=0
 dependency11.to=Life
 target6.height=50
-editor.fx.0.width=1151
+editor.fx.0.width=0
 target7.editor.width=964
 class.OperatorEquation.superclass=Text
 dependency32.to=Life
@@ -295,6 +296,7 @@ readme.y=10
 readme.x=10
 target10.naviview.expanded=false
 target16.typeParameters=
+class.Menu.image=menu_image.png
 target2.typeParameters=
 dependency13.to=Bullet
 dependency3.type=UsesDependency
